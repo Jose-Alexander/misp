@@ -1,35 +1,61 @@
-<!doctype html>
-<html dir="ltr" lang="es">
-  <head>
-    <meta charset="utf-8">
-    <title>Nueva pestaña</title>
-    <style>
-      body {
-        background: #FFFFFF;
-        margin: 0;
-      }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job App</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-      #backgroundImage {
-        border: none;
-        height: 100%;
-        pointer-events: none;
-        position: fixed;
-        top: 0;
-        visibility: hidden;
-        width: 100%;
-      }
+<body class="bg-gray-300 flex justify-center items-center min-h-screen">
 
-      [show-background-image] #backgroundImage {
-        visibility: visible;
-      }
-    </style>
-  </head>
-  <body>
-    <iframe id="backgroundImage" src=""></iframe>
-    <ntp-app></ntp-app>
-    <script type="module" src="new_tab_page.js"></script>
-    <link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css">
-    <link rel="stylesheet" href="chrome://theme/colors.css?sets=ui,chrome">
-    <link rel="stylesheet" href="shared_vars.css">
-  </body>
+<!-- PHONE FRAME -->
+<div class="w-[390px] h-[844px] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden">
+
+<!-- HEADER -->
+<header class="bg-blue-600 text-white p-4 flex justify-between items-center">
+<h1 class="font-bold text-lg">Discover Jobs</h1>
+<a href="notifications.html">🔔</a>
+</header>
+
+<!-- SEARCH -->
+<div class="p-4">
+<input type="text" placeholder="Search jobs..."
+class="w-full p-2 border rounded-lg">
+</div>
+
+<!-- JOB LIST -->
+<main class="flex-1 overflow-y-auto px-4 space-y-4">
+
+<div class="bg-gray-100 p-4 rounded-xl shadow">
+<h2 class="font-bold text-lg">UX Designer Jr.</h2>
+<p class="text-sm text-gray-500">TechCorp • Remoto</p>
+<p class="text-sm mt-2">$18,000 MXN</p>
+<button onclick="location.href='job-details.html'"
+class="mt-3 w-full bg-blue-600 text-white py-2 rounded-lg">
+Ver detalles
+</button>
+</div>
+
+<div class="bg-gray-100 p-4 rounded-xl shadow">
+<h2 class="font-bold text-lg">Frontend Developer</h2>
+<p class="text-sm text-gray-500">InnovaSoft • CDMX</p>
+<p class="text-sm mt-2">$20,000 MXN</p>
+<button onclick="location.href='job-details.html'"
+class="mt-3 w-full bg-blue-600 text-white py-2 rounded-lg">
+Ver detalles
+</button>
+</div>
+
+</main>
+
+<!-- NAVIGATION -->
+<nav class="bg-white border-t p-3 flex justify-around text-sm">
+<a href="index.html">🏠 Home</a>
+<a href="applications.html">📄 Applications</a>
+<a href="profile.html">👤 Profile</a>
+</nav>
+
+</div>
+</body>
 </html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-300 flex justify-center items-center min-h-screen">
+
+<div class="w-[390px] h-[844px] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden">
+
+<!-- HEADER -->
+<header class="bg-blue-600 text-white p-4">
+<h1 class="font-bold text-lg">Profile</h1>
+</header>
+
+<main class="flex-1 overflow-y-auto p-5 space-y-6">
+
+<!-- FOTO -->
+<div class="text-center">
+<div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-3"></div>
+<h2 class="text-xl font-bold">Información Personal</h2>
+</div>
+
+<!-- DATOS PERSONALES -->
+<div class="bg-gray-100 p-4 rounded-xl space-y-3">
+
+<input id="nameInput" type="text" placeholder="Nombre completo"
+class="w-full p-2 rounded border text-sm">
+
+<input id="phoneInput" type="tel" placeholder="Número de teléfono"
+class="w-full p-2 rounded border text-sm">
+
+<input id="careerInput" type="text" placeholder="Carrera"
+class="w-full p-2 rounded border text-sm">
+
+<input id="universityInput" type="text" placeholder="Universidad"
+class="w-full p-2 rounded border text-sm">
+
+<input id="matriculaInput" type="text" placeholder="Matrícula universitaria"
+class="w-full p-2 rounded border text-sm">
+
+<label class="text-sm text-gray-600">Fecha de graduación</label>
+<input id="graduationInput" type="date"
+class="w-full p-2 rounded border text-sm">
+
+</div>
+
+<!-- SKILLS -->
+<div class="bg-gray-100 p-4 rounded-xl">
+<h3 class="font-semibold mb-2">Skills</h3>
+<textarea id="skillsInput"
+placeholder="Ej: React, Node, JavaScript"
+class="w-full p-2 rounded border text-sm"></textarea>
+</div>
+
+<!-- SUBIR CV -->
+<div class="bg-gray-100 p-4 rounded-xl">
+<h3 class="font-semibold mb-2">Subir CV</h3>
+
+<input type="file" id="cvUpload"
+class="w-full text-sm">
+
+<p id="cvStatus" class="text-green-600 text-sm mt-2 hidden">
+CV cargado correctamente ✅
+</p>
+
+</div>
+
+<!-- BOTÓN GUARDAR -->
+<button onclick="saveProfile()"
+class="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold">
+Guardar Perfil
+</button>
+
+</main>
+
+<!-- NAVIGATION -->
+<nav class="border-t p-3 flex justify-around text-sm">
+<a href="index.html">🏠 Home</a>
+<a href="applications.html">📄 Applications</a>
+<a href="profile.html">👤 Profile</a>
+</nav>
+
+</div>
+
+<script>
+function saveProfile() {
+
+localStorage.setItem("userName", document.getElementById("nameInput").value);
+localStorage.setItem("userPhone", document.getElementById("phoneInput").value);
+localStorage.setItem("userCareer", document.getElementById("careerInput").value);
+localStorage.setItem("userUniversity", document.getElementById("universityInput").value);
+localStorage.setItem("userMatricula", document.getElementById("matriculaInput").value);
+localStorage.setItem("userGraduation", document.getElementById("graduationInput").value);
+localStorage.setItem("userSkills", document.getElementById("skillsInput").value);
+
+const cvFile = document.getElementById("cvUpload").files[0];
+if(cvFile){
+document.getElementById("cvStatus").classList.remove("hidden");
+}
+
+alert("Perfil guardado correctamente ✅");
+}
+
+window.onload = function(){
+document.getElementById("nameInput").value = localStorage.getItem("userName") || "";
+document.getElementById("phoneInput").value = localStorage.getItem("userPhone") || "";
+document.getElementById("careerInput").value = localStorage.getItem("userCareer") || "";
+document.getElementById("universityInput").value = localStorage.getItem("userUniversity") || "";
+document.getElementById("matriculaInput").value = localStorage.getItem("userMatricula") || "";
+document.getElementById("graduationInput").value = localStorage.getItem("userGraduation") || "";
+document.getElementById("skillsInput").value = localStorage.getItem("userSkills") || "";
+}
+</script>
+
+</body>
+</html>
