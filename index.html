@@ -1,61 +1,994 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Job App</title>
-<script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <title>Job Discovery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-300 flex justify-center items-center min-h-screen">
+<body class="bg-gray-100">
 
-<!-- PHONE FRAME -->
-<div class="w-[390px] h-[844px] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden">
+  <div class="max-w-md mx-auto p-4">
 
-<!-- HEADER -->
-<header class="bg-blue-600 text-white p-4 flex justify-between items-center">
-<h1 class="font-bold text-lg">Discover Jobs</h1>
-<a href="notifications.html">🔔</a>
-</header>
+    <h1 class="text-2xl font-bold mb-6">Job Discovery</h1>
 
-<!-- SEARCH -->
-<div class="p-4">
-<input type="text" placeholder="Search jobs..."
-class="w-full p-2 border rounded-lg">
-</div>
+    <!-- Job Card -->
+    <a href="job-details.html">
+      <div class="bg-white p-4 rounded-xl shadow mb-4">
+        <h3 class="font-bold">Junior UX Designer</h3>
+        <p class="text-gray-500 text-sm">TechCorp Solutions</p>
+      </div>
+    </a>
 
-<!-- JOB LIST -->
-<main class="flex-1 overflow-y-auto px-4 space-y-4">
+    <a href="job-details.html">
+      <div class="bg-white p-4 rounded-xl shadow">
+        <h3 class="font-bold">Frontend Developer</h3>
+        <p class="text-gray-500 text-sm">CloudScale Inc</p>
+      </div>
+    </a>
 
-<div class="bg-gray-100 p-4 rounded-xl shadow">
-<h2 class="font-bold text-lg">UX Designer Jr.</h2>
-<p class="text-sm text-gray-500">TechCorp • Remoto</p>
-<p class="text-sm mt-2">$18,000 MXN</p>
-<button onclick="location.href='job-details.html'"
-class="mt-3 w-full bg-blue-600 text-white py-2 rounded-lg">
-Ver detalles
-</button>
-</div>
+  </div>
 
-<div class="bg-gray-100 p-4 rounded-xl shadow">
-<h2 class="font-bold text-lg">Frontend Developer</h2>
-<p class="text-sm text-gray-500">InnovaSoft • CDMX</p>
-<p class="text-sm mt-2">$20,000 MXN</p>
-<button onclick="location.href='job-details.html'"
-class="mt-3 w-full bg-blue-600 text-white py-2 rounded-lg">
-Ver detalles
-</button>
-</div>
+  <!-- Bottom Navigation -->
+  <div class="fixed bottom-0 left-0 right-0 bg-white p-4 flex justify-around border-t">
+    <a href="index.html">Discover</a>
+    <a href="applications.html">Applications</a>
+    <a href="notifications.html">Notifications</a>
+  </div>
 
-</main>
-
-<!-- NAVIGATION -->
-<nav class="bg-white border-t p-3 flex justify-around text-sm">
-<a href="index.html">🏠 Home</a>
-<a href="applications.html">📄 Applications</a>
-<a href="profile.html">👤 Profile</a>
-</nav>
-
-</div>
 </body>
 </html>
+<!-- Job Search Discovery -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Job Search Discovery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex h-screen max-w-md mx-auto flex-col overflow-hidden bg-background-light dark:bg-background-dark shadow-2xl">
+<!-- Header -->
+<header class="flex items-center justify-between px-4 pt-6 pb-2 bg-background-light dark:bg-background-dark">
+<div class="flex items-center justify-center size-10 rounded-full bg-slate-200 dark:bg-slate-800">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">person</span>
+</div>
+<h1 class="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100">Job Discovery</h1>
+<div class="flex items-center justify-center size-10">
+<button class="relative p-2 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-background-dark"></span>
+</button>
+</div>
+</header>
+<!-- Search Bar -->
+<div class="px-4 py-3">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-slate-400">search</span>
+<input class="w-full h-12 pl-12 pr-4 bg-slate-100 dark:bg-slate-800 border-none rounded-xl text-slate-900 dark:text-slate-100 placeholder:text-slate-500 focus:ring-2 focus:ring-primary" placeholder="Search jobs, companies..." type="text"/>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex gap-3 px-4 py-2 overflow-x-auto no-scrollbar">
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg text-sm font-semibold whitespace-nowrap">
+                Internship
+                <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-medium whitespace-nowrap">
+                Part-time
+                <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-medium whitespace-nowrap">
+                Junior
+                <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+<!-- Job List -->
+<main class="flex-1 overflow-y-auto px-4 pt-4 pb-20">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold">Recommended for you</h2>
+<button class="text-primary text-sm font-semibold">See all</button>
+</div>
+<div class="space-y-4">
+<!-- Job Card 1 -->
+<div class="p-4 bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl">
+<div class="flex justify-between items-start mb-3">
+<div class="size-12 rounded-lg bg-blue-100 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Corporate technology company minimalist blue logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9Zc-h31Xld0GUgcQZP6UNtprAIfvw0JX_HHsU6lVJeWW6tj8R6PwuLbkAli4gZLnAFBX8dqSA6EhGpf5Ql68mV-HBjKtvJ82hELgVDuvvhl0q8621-qSVFDF-P58t1QqhYd97baGRef8oKoYL7TMCjtRqfIiA9ZRghxEdv_GYdWXlPDhpXaj7V1G4sWk0Yegg1lICEshdiL8Eo2PzcCoUpVH9ZNrb-kMVpatT8Z-6qN13vmv6cLUTC8PhUL12nxFYXYSi9S_kD8h6"/>
+</div>
+<span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase rounded-md flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">bolt</span> Easy Apply
+                        </span>
+</div>
+<h3 class="font-bold text-lg mb-1">Junior UX Designer</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-3">TechCorp Solutions • Madrid, Spain</p>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs rounded-full">Remote</span>
+<span class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs rounded-full">Full-time</span>
+</div>
+</div>
+<!-- Job Card 2 -->
+<div class="p-4 bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl">
+<div class="flex justify-between items-start mb-3">
+<div class="size-12 rounded-lg bg-emerald-100 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Eco-friendly green company abstract leaf logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADwFUNULK3BNKnsS2pz0DZAl172uKRAQElBiToEv2MZf9BkDVDl76rWwWgRWKPndABR1gFzYHImDtulf42par2Cql8cpEbWbDBUtclO4jXUNiVwL_tS7cEuIptg7lTDsblKr8Oc8FaQbYo2Xcirq7Fp9klTzLEShgwnfKfkFYXoZLNwn90js6lRHo_QH32TGss1WgB19jWN6-Vd0RL_r682JRs-tSAdeWKAUYueDPm6svftOzXtWIu73Ir06vNZ1ntqRJVvCLR7sia"/>
+</div>
+<span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase rounded-md flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">bolt</span> Easy Apply
+                        </span>
+</div>
+<h3 class="font-bold text-lg mb-1">Marketing Internship</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-3">GreenWay Group • Barcelona, Spain</p>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs rounded-full">On-site</span>
+<span class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs rounded-full">20h/week</span>
+</div>
+</div>
+<!-- Job Card 3 -->
+<div class="p-4 bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 rounded-xl">
+<div class="flex justify-between items-start mb-3">
+<div class="size-12 rounded-lg bg-orange-100 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Vibrant orange startup company circle logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA38bdWpIkkNXMrIQ8i5nkSZX3dZdO2zbUT9FeKAKKizOmEEYmFRJ3LAak5GnGHY--JH9WT2IW04cJSaVNEDkioKMvY9Y3Bf5hMZgHB5hkBajNMjRuOPswE7pBoUd7nodhDVS2YkdPlTaLt2POnVSdSz-es7UUMRgO-ci5D4uU8POttHoOmzbhGUZW0jwh4PSW4hh9RIFyEn3C9P0DYSmonnUIlX8jXZAnqaqpjylIZ8N5uzDrz7C5OUwIMIign9i7f4nkFJut7WBiO"/>
+</div>
+<button class="text-slate-400">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+<h3 class="font-bold text-lg mb-1">Frontend Developer</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-3">CloudScale Inc • Valencia, Spain</p>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs rounded-full">Hybrid</span>
+<span class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs rounded-full">Junior</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="absolute bottom-0 w-full bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-4 pb-6 pt-2 flex justify-around">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined material-symbols-fill">explore</span>
+<span class="text-[10px] font-bold">Discover</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">work</span>
+<span class="text-[10px] font-medium">Applied</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">bookmark</span>
+<span class="text-[10px] font-medium">Saved</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</div>
+</body></html>
+
+<!-- Job Details and Apply -->
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detalles del Empleo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased font-display">
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-[430px] mx-auto bg-background-light dark:bg-background-dark shadow-2xl">
+<!-- Header -->
+<header class="sticky top-0 z-20 flex items-center justify-between px-4 py-4 bg-background-light/80 dark:bg-background-dark/80 ios-blur border-b border-primary/10">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back_ios_new</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Detalles de la Vacante</h1>
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">share</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto pb-32">
+<!-- Hero Section -->
+<section class="p-6">
+<div class="flex items-start gap-5 mb-6">
+<div class="size-20 rounded-2xl bg-primary/10 flex items-center justify-center overflow-hidden border border-primary/20">
+<img alt="Logo de la empresa de tecnología" class="w-full h-full object-cover" data-alt="Corporate technology company logo minimalist design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyI8fUT3cY-q7Jkvk4d2xqVLZjrmJLwcLv3bSV8lbzqGBBctEnC-qWjkSRraJvdghriC4aoI2m5tZVqlTYT45mcFtLOcSuLoulMPN3ZztJJd_OoeDt24c67ZO9NyHJV7EPgN3A_WCB6BA7r940aoEo8sO_MnTBspKxHxfKm122a4PgiLdWT-Bxfzf-Q1C1DAUCsUNKyE-f2WjvhcLAr_KJmXawsdBjVbxg_L8ZS7NtMy71Y74AZkhbqY2gvryuyJQZRNE6iJ8VMo6p"/>
+</div>
+<div class="flex-1">
+<h2 class="text-2xl font-extrabold leading-tight text-slate-900 dark:text-slate-100">Desarrollador Full Stack Jr.</h2>
+<p class="text-primary font-semibold text-lg">TechNova Solutions</p>
+<div class="flex items-center gap-1 mt-1 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Ciudad de México, MX • Remoto</span>
+</div>
+</div>
+</div>
+<!-- Tags -->
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1.5 rounded-lg bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">Tiempo Completo</span>
+<span class="px-3 py-1.5 rounded-lg bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">$18k - $25k MXN</span>
+<span class="px-3 py-1.5 rounded-lg bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">Estudiante/Egresado</span>
+</div>
+<!-- Tabs (Visual Only) -->
+<div class="flex border-b border-slate-200 dark:border-slate-800 mb-6">
+<button class="flex-1 py-3 text-sm font-bold border-b-2 border-primary text-primary">Descripción</button>
+<button class="flex-1 py-3 text-sm font-bold text-slate-500 dark:text-slate-400">Empresa</button>
+<button class="flex-1 py-3 text-sm font-bold text-slate-500 dark:text-slate-400">Opiniones</button>
+</div>
+<!-- Job Details Content -->
+<article class="space-y-6">
+<div>
+<h3 class="text-lg font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">description</span>
+                            Sobre el puesto
+                        </h3>
+<p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Buscamos a un estudiante de últimos semestres o recién egresado apasionado por el desarrollo web para unirse a nuestro equipo core. Trabajarás en proyectos reales escalables utilizando tecnologías modernas y recibirás mentoría constante de arquitectos senior.
+                        </p>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">checklist</span>
+                            Requisitos
+                        </h3>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span>Conocimiento sólido en JavaScript/TypeScript y React.</span>
+</li>
+<li class="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span>Experiencia básica con Node.js y bases de datos SQL.</span>
+</li>
+<li class="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span>Comprensión de arquitectura REST y control de versiones (Git).</span>
+</li>
+<li class="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span>Inglés técnico intermedio (lectura).</span>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">redeem</span>
+                            Beneficios
+                        </h3>
+<div class="grid grid-cols-2 gap-3">
+<div class="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+<span class="material-symbols-outlined text-primary mb-2">laptop_mac</span>
+<p class="text-sm font-bold">Equipo Proporcionado</p>
+</div>
+<div class="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+<span class="material-symbols-outlined text-primary mb-2">school</span>
+<p class="text-sm font-bold">Plan de Carrera</p>
+</div>
+<div class="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+<span class="material-symbols-outlined text-primary mb-2">medical_services</span>
+<p class="text-sm font-bold">Seguro de Gastos Médicos</p>
+</div>
+<div class="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+<span class="material-symbols-outlined text-primary mb-2">schedule</span>
+<p class="text-sm font-bold">Horario Flexible</p>
+</div>
+</div>
+</div>
+</article>
+</section>
+</main>
+<!-- Fixed Apply Button Container -->
+<div class="absolute bottom-0 left-0 right-0 p-6 bg-background-light/95 dark:bg-background-dark/95 ios-blur border-t border-primary/10 flex gap-4">
+<button class="flex-none p-4 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/25 transition-all active:scale-95">
+                Postularme Ahora
+            </button>
+</div>
+<!-- Optional Confirmation Modal (Static for Preview) -->
+<div class="hidden fixed inset-0 z-50 flex items-end justify-center px-4 pb-10 sm:items-center sm:p-0">
+<!-- Modal Backdrop -->
+<div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+<!-- Modal Content -->
+<div class="relative bg-background-light dark:bg-background-dark rounded-3xl w-full max-w-sm overflow-hidden shadow-2xl border border-primary/20">
+<div class="p-8 text-center">
+<div class="size-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 text-primary">
+<span class="material-symbols-outlined text-5xl">task_alt</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">¿Confirmar Postulación?</h3>
+<p class="text-slate-500 dark:text-slate-400 mb-8">
+                        Se enviará tu perfil académico y CV actualizado a <span class="font-bold text-slate-900 dark:text-slate-100">TechNova Solutions</span>.
+                    </p>
+<div class="space-y-3">
+<button class="w-full bg-primary text-white font-bold py-4 rounded-2xl shadow-lg shadow-primary/20">
+                            Confirmar Envío
+                        </button>
+<button class="w-full bg-transparent text-slate-500 font-bold py-4">
+                            Revisar CV primero
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full max-w-[430px] flex gap-2 border-t border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark px-4 pb-6 pt-2 z-10">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-[10px] font-bold uppercase tracking-widest">Inicio</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">work</span>
+<p class="text-[10px] font-bold uppercase tracking-widest">Empleos</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<p class="text-[10px] font-bold uppercase tracking-widest">Mis Postulaciones</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<p class="text-[10px] font-bold uppercase tracking-widest">Perfil</p>
+</a>
+</nav>
+</div>
+</body></html>
+
+<!-- My Applications Tracking -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Applications Tracking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display">
+<!-- Header / Status Bar Area -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 ios-blur border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between px-4 py-4">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">My Applications</h1>
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+</div>
+<!-- Tabs Section -->
+<div class="flex px-4 overflow-x-auto no-scrollbar gap-6">
+<button class="flex flex-col items-center pt-2 pb-3 border-b-2 border-primary text-primary font-bold text-sm min-w-fit">
+                All (12)
+            </button>
+<button class="flex flex-col items-center pt-2 pb-3 border-b-2 border-transparent text-slate-500 dark:text-slate-400 font-medium text-sm min-w-fit">
+                Active
+            </button>
+<button class="flex flex-col items-center pt-2 pb-3 border-b-2 border-transparent text-slate-500 dark:text-slate-400 font-medium text-sm min-w-fit">
+                Interviewing
+            </button>
+<button class="flex flex-col items-center pt-2 pb-3 border-b-2 border-transparent text-slate-500 dark:text-slate-400 font-medium text-sm min-w-fit">
+                Archived
+            </button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto px-4 py-6 space-y-6">
+<!-- Today Section -->
+<section>
+<h2 class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-4 px-1">Today</h2>
+<div class="space-y-3">
+<!-- Application Card: Interview Scheduled -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex gap-4">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 border border-primary/20">
+<img alt="TechCorp Company Logo" class="size-8 rounded" data-alt="TechCorp professional company logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATn-EgS-XFPyBnCf_IBL4_CER1D6mBDjo-oz8Owq6Gh9A_GPXvcrS9dpTMz25mU0iVaNtYvXXhJL4RKyTC2pOkwAKBhW5NEE6O7eLPJlz6PYonmLfXyy9jlEqI59IHr6rqyB9Mqk8KsVEJzMomA-uRKYmwTuCfoUR7CMTrIj4Dszpc0OTqICiIkO4SjLyBYpKgb9aiG7ptVAgFYDIRuO2lK7KPd0xUDEKUUV_yP1SFX0_s05fFxmtJgPOcMxFIBAwCrVUpjea1j6H8"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-base truncate">Frontend Developer Intern</h3>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800">INTERVIEW</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400">TechCorp Solutions</p>
+<div class="mt-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-primary">calendar_today</span>
+<p class="text-xs font-semibold text-primary">Interview Scheduled: Oct 28, 10:00 AM</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Yesterday Section -->
+<section>
+<h2 class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-4 px-1">Yesterday</h2>
+<div class="space-y-3">
+<!-- Application Card: Under Review -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex gap-4">
+<div class="size-12 rounded-lg bg-orange-100 dark:bg-orange-900/20 flex items-center justify-center shrink-0 border border-orange-200 dark:border-orange-800">
+<img alt="DesignHub Logo" class="size-8 rounded" data-alt="DesignHub minimalist creative agency logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnHDZA4MYcBEgJXYBqbpCrSIXnfuU41fgTelBPdTOQ6NMJw8eIVwvsWCrHKW6hjYH8mHT2lPy5Ev7hux3oAWt2OceOfb8UJGb80NtOJJ1qCi4ps5LvHn5ihUJGhEgu6GnNgqNuTEXmIVItNOMjuRLk-Y4VbvDZtp0YySdUmFc12K-z50dIYnsFpGzDCcy4Og9g_EiuWp-FR3SA5EQyTGS7UrOVTlbbBLOmR1HbYmjzOXdXKpSTnwIH_mSP_m6PuKZphJJgzVFeDAIA"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-base truncate">Junior UI Designer</h3>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-orange-100 dark:bg-orange-900/40 text-orange-600 dark:text-orange-400 border border-orange-200 dark:border-orange-800">UNDER REVIEW</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400">DesignHub Agency</p>
+<p class="mt-2 text-xs text-slate-500 dark:text-slate-500 italic">Applied 24h ago</p>
+</div>
+</div>
+</div>
+<!-- Application Card: Under Review -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex gap-4">
+<div class="size-12 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0 border border-slate-200 dark:border-slate-700">
+<img alt="DataMind Logo" class="size-8 rounded" data-alt="DataMind corporate identity logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJYru_R3-bvETLb4HF4U1JiK_IX0VrgftxScZWmLNqwNH92q97G1-HZM4WmVPUgM4hHhEMjNd52EvpRXZBgQz2XRqWQh5Ktjl4TZ1a6wSmprYFkF354rmoOIoCrXZR9YxCRcZv08YGXx_uy6WqwarRrhNtU3qgWjWAH6Uu0wBUi4Vc2TgrSKBX9UgAaZUXMR5RURJvqXH_ULgPS6E695k-IO3YdXG-bXpovLNg8NxLIh1njwsKw2S-Og1lls7VBjLKgdgBov9cSV_q"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-base truncate">Data Analyst (Part-time)</h3>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700">SUBMITTED</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400">DataMind Analytics</p>
+<p class="mt-2 text-xs text-slate-500 dark:text-slate-500 italic">Applied yesterday</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Earlier Section -->
+<section>
+<h2 class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-4 px-1">Last Week</h2>
+<div class="space-y-3">
+<!-- Application Card: Closed -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 opacity-75">
+<div class="flex gap-4">
+<div class="size-12 rounded-lg bg-red-100 dark:bg-red-900/20 flex items-center justify-center shrink-0 border border-red-200 dark:border-red-800">
+<img alt="GlobalBank Logo" class="size-8 rounded" data-alt="GlobalBank solid corporate logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtVwYuE4C8hdgbf-s8qmALaoRJkny7xb8gGGPwZ8gSkK-pmqLJo79P_8J70EULcHgwenV94zloTWtRdA6EyTQodWT0stGbC7R9s8O0DVCdtY2OQVJ3UKsODb7n7vQQy966IfWMNx1INORoGWEbJ68GvXMkZfpCTAMXC6iiRwo_ITheutwW1iOkNcWJVWpcJnPM2mejb3oF_sVrwUjWahgHnRdnxKHkwvNj2r8XtPH3vMZk8GiSrjymVHE5ZXSgy5372MpasGcL-wXR"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-base truncate">IT Support Specialist</h3>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-800">CLOSED</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400">Global Banking Group</p>
+<p class="mt-2 text-xs text-slate-500 dark:text-slate-500">Position no longer accepting applications</p>
+</div>
+</div>
+</div>
+<!-- Application Card: Rejected -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 opacity-75">
+<div class="flex gap-4">
+<div class="size-12 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0 border border-slate-200 dark:border-slate-700">
+<img alt="SoftSys Logo" class="size-8 rounded" data-alt="SoftSys modern software company logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9Egplgg6vLDWS4dSFmqF9RfTPemecjlwf4whRL1QqH9SXeydAlQpBfvr7iQqnMEaTV18NwDbtNZ3CAo2YzeQkeBwXKQufAKpoR5FzcY8qPOzREabtA8yI44XpJcQZYR1AMLux-rV738vE35qdTJQ0bTYVSo3rsKSfHQ3eP8LyO7YQavN6S_c3OddT_DN9G_ejz2chJ7wFvaCihH_8bScBkvYETW673Xj7uUw-SLG8fpM8uqEyAJDiUsauZgLznfeb-UrJ0WVhZwsJ"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-base truncate">Backend Developer</h3>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700">NOT SELECTED</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400">SoftSys Engineering</p>
+<p class="mt-2 text-xs text-slate-500 dark:text-slate-500 italic">Updated Oct 15</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="bg-white/80 dark:bg-slate-900/80 ios-blur border-t border-slate-200 dark:border-slate-800 pb-8 pt-2 px-6 flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">home</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">work_outline</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary">Jobs</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="relative">
+<span class="material-symbols-outlined text-primary font-fill">description</span>
+<span class="absolute -top-1 -right-1 size-2 bg-red-500 rounded-full"></span>
+</div>
+<span class="text-[10px] font-bold text-primary">Applications</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">chat_bubble_outline</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary">Messages</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">person_outline</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary">Profile</span>
+</a>
+</nav>
+</body></html>
+
+<!-- Job Notifications Center -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Job Notifications Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display">
+<!-- Header / Status Bar Area -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 ios-blur border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center px-4 py-3 justify-between">
+<div class="flex size-10 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100 cursor-pointer">arrow_back_ios</span>
+</div>
+<h1 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center">Notifications</h1>
+<div class="flex size-10 items-center justify-end">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-transparent text-primary">
+<span class="material-symbols-outlined">done_all</span>
+</button>
+</div>
+</div>
+<!-- Filter Tabs -->
+<div class="px-4">
+<div class="flex border-b border-slate-200 dark:border-slate-800 gap-6">
+<a class="flex flex-col items-center justify-center border-b-2 border-primary text-primary pb-3 pt-2" href="#">
+<p class="text-sm font-bold">All</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2" href="#">
+<p class="text-sm font-bold">Offers</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2" href="#">
+<p class="text-sm font-bold">Interviews</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2" href="#">
+<p class="text-sm font-bold">Status</p>
+</a>
+</div>
+</div>
+</header>
+<!-- Main Feed -->
+<main class="flex-1 overflow-y-auto">
+<!-- Section: Today -->
+<section>
+<div class="bg-slate-100 dark:bg-slate-900/50 px-4 py-2">
+<h4 class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">Today</h4>
+</div>
+<!-- Notification Item: New Offer -->
+<div class="flex items-start gap-4 px-4 py-4 border-b border-slate-100 dark:border-slate-800 active:bg-slate-50 dark:active:bg-slate-800/50 transition-colors">
+<div class="relative shrink-0">
+<div class="bg-primary/10 dark:bg-primary/20 flex items-center justify-center rounded-xl size-12 text-primary">
+<span class="material-symbols-outlined">work</span>
+</div>
+<div class="absolute -top-1 -right-1 size-3 bg-primary rounded-full border-2 border-background-light dark:border-background-dark"></div>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<div class="flex justify-between items-start">
+<p class="text-sm font-bold leading-tight line-clamp-1">New Job Match: Junior UX Researcher</p>
+<span class="text-[10px] text-slate-400 font-medium whitespace-nowrap ml-2">2h ago</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2 leading-snug">TechCorp is looking for candidates with your profile. Remote position available.</p>
+</div>
+</div>
+<!-- Notification Item: Interview -->
+<div class="flex items-start gap-4 px-4 py-4 border-b border-slate-100 dark:border-slate-800 active:bg-slate-50 dark:active:bg-slate-800/50 transition-colors">
+<div class="shrink-0">
+<div class="bg-amber-500/10 dark:bg-amber-500/20 flex items-center justify-center rounded-xl size-12 text-amber-500">
+<span class="material-symbols-outlined">video_call</span>
+</div>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<div class="flex justify-between items-start">
+<p class="text-sm font-bold leading-tight line-clamp-1">Interview Invitation</p>
+<span class="text-[10px] text-slate-400 font-medium whitespace-nowrap ml-2">5h ago</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2 leading-snug">Global Solutions invited you for a screening call on Friday, Oct 24th at 10:00 AM.</p>
+<div class="mt-2 flex gap-2">
+<button class="px-3 py-1.5 bg-primary text-white text-xs font-bold rounded-lg">Confirm</button>
+<button class="px-3 py-1.5 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-lg">Reschedule</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Yesterday -->
+<section>
+<div class="bg-slate-100 dark:bg-slate-900/50 px-4 py-2">
+<h4 class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">Yesterday</h4>
+</div>
+<!-- Notification Item: Application Update -->
+<div class="flex items-start gap-4 px-4 py-4 border-b border-slate-100 dark:border-slate-800 active:bg-slate-50 dark:active:bg-slate-800/50 transition-colors">
+<div class="shrink-0">
+<div class="bg-emerald-500/10 dark:bg-emerald-500/20 flex items-center justify-center rounded-xl size-12 text-emerald-500">
+<span class="material-symbols-outlined">assignment_turned_in</span>
+</div>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<div class="flex justify-between items-start">
+<p class="text-sm font-bold leading-tight line-clamp-1">Application Viewed</p>
+<span class="text-[10px] text-slate-400 font-medium whitespace-nowrap ml-2">1d ago</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2 leading-snug">Design Studio just viewed your application for "Product Designer" position.</p>
+</div>
+</div>
+<!-- Notification Item: Company Update -->
+<div class="flex items-start gap-4 px-4 py-4 border-b border-slate-100 dark:border-slate-800 active:bg-slate-50 dark:active:bg-slate-800/50 transition-colors">
+<div class="shrink-0">
+<div class="bg-slate-200 dark:bg-slate-800 flex items-center justify-center rounded-xl size-12 text-slate-500">
+<span class="material-symbols-outlined">business</span>
+</div>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<div class="flex justify-between items-start">
+<p class="text-sm font-bold leading-tight line-clamp-1">New Employer on Bolsa</p>
+<span class="text-[10px] text-slate-400 font-medium whitespace-nowrap ml-2">1d ago</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2 leading-snug">Innovate Labs has joined the platform. See 3 new openings in your field.</p>
+</div>
+</div>
+</section>
+<!-- Section: Older -->
+<section>
+<div class="bg-slate-100 dark:bg-slate-900/50 px-4 py-2">
+<h4 class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">Older</h4>
+</div>
+<div class="flex items-start gap-4 px-4 py-4 border-b border-slate-100 dark:border-slate-800 opacity-75">
+<div class="shrink-0">
+<div class="bg-primary/10 dark:bg-primary/20 flex items-center justify-center rounded-xl size-12 text-primary">
+<span class="material-symbols-outlined">campaign</span>
+</div>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<div class="flex justify-between items-start">
+<p class="text-sm font-bold leading-tight line-clamp-1">Weekly Digest</p>
+<span class="text-[10px] text-slate-400 font-medium whitespace-nowrap ml-2">3d ago</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2 leading-snug">You had 12 new profile views and 5 application updates this week.</p>
+</div>
+</div>
+</section>
+<!-- Bottom Spacing for Nav Bar -->
+<div class="h-24"></div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-background-light/90 dark:bg-background-dark/90 ios-blur border-t border-slate-200 dark:border-slate-800 pb-8 pt-2">
+<div class="flex px-4 items-center">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<p class="text-[10px] font-semibold">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-[24px]">search</span>
+<p class="text-[10px] font-semibold">Search</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-[24px] fill-1">notifications</span>
+<p class="text-[10px] font-semibold">Alerts</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<p class="text-[10px] font-semibold">Profile</p>
+</a>
+</div>
+</nav>
+</body></html>
+
+<!-- Student Profile Visuals -->
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,FILL@0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Lexend', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-10 bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 px-4 py-3 flex items-center justify-between">
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">arrow_back_ios</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Professional Profile</h1>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">settings</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Profile Header Section -->
+<section class="p-6 flex flex-col items-center bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800">
+<div class="relative mb-4">
+<div class="w-32 h-32 rounded-full border-4 border-primary/20 bg-cover bg-center overflow-hidden" data-alt="Professional portrait of a young male student smiling" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBAvraPk2k5Noq5J_VtzSgFJmWU9Zq2hU0zN886rojWxQHYM7og3fBSjuBenUUCIfaiRzShCEnziK64j3gYQvjz_v0QIH9Y2gvajsQwpUiNxCUSQuu11RVt0Zi9oYumzNKBqgXS6aOWDUBD74ru1Pnkb1kpjFAdFy74J1PAFhLjCxY_8Ne3lclcAe7dQza_8CNYqJ0WiZCUzsdaPoF48akBXtYHXHmTVyAHDgRZT3eJ6nuIo6BkuOBpw36le3x8V6qC3j4DZaPrOadX')">
+</div>
+<button class="absolute bottom-0 right-0 bg-primary text-white p-2 rounded-full shadow-lg border-2 border-white dark:border-background-dark">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">Juan Pérez</h2>
+<p class="text-primary font-medium">Computer Engineering Student</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Universidad Nacional Autónoma</p>
+</section>
+<!-- Progress Bar -->
+<section class="px-6 py-4 bg-white dark:bg-background-dark mb-2">
+<div class="flex justify-between items-end mb-2">
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Profile Completion</span>
+<span class="text-sm font-bold text-primary">75%</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 75%"></div>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">info</span>
+                Almost there! Add your CV to reach 100%
+            </p>
+</section>
+<!-- Personal Information Section -->
+<section class="px-6 py-4 bg-white dark:bg-background-dark mb-2">
+<h3 class="text-base font-bold text-slate-900 dark:text-white mb-4 uppercase tracking-wider text-xs opacity-70">Personal Information</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary/70">mail</span>
+<div>
+<p class="text-xs text-slate-500">Email Address</p>
+<p class="text-sm font-medium">juan.perez@universidad.edu</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary/70">phone</span>
+<div>
+<p class="text-xs text-slate-500">Phone Number</p>
+<p class="text-sm font-medium">+52 55 1234 5678</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary/70">location_on</span>
+<div>
+<p class="text-xs text-slate-500">Location</p>
+<p class="text-sm font-medium">Mexico City, MX</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Academic Background Section -->
+<section class="px-6 py-4 bg-white dark:bg-background-dark mb-2">
+<h3 class="text-base font-bold text-slate-900 dark:text-white mb-4 uppercase tracking-wider text-xs opacity-70">Academic Background</h3>
+<div class="p-4 border border-slate-200 dark:border-slate-800 rounded-xl bg-slate-50 dark:bg-slate-900/50">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-bold text-slate-800 dark:text-slate-200">B.S. Computer Engineering</h4>
+<span class="text-xs font-bold text-primary px-2 py-1 bg-primary/10 rounded">Current</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400">Universidad Nacional Autónoma</p>
+<div class="flex items-center gap-1 mt-3 text-xs text-slate-500">
+<span class="material-symbols-outlined text-xs">calendar_today</span>
+                    Expected Graduation: June 2025
+                </div>
+</div>
+</section>
+<!-- Skills Tag Cloud -->
+<section class="px-6 py-4 bg-white dark:bg-background-dark mb-2">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-base font-bold text-slate-900 dark:text-white uppercase tracking-wider text-xs opacity-70">Top Skills</h3>
+<button class="text-primary text-xs font-bold">+ Add Skill</button>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-primary text-white rounded-full text-xs font-medium">JavaScript</span>
+<span class="px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-medium border border-primary/20">Python</span>
+<span class="px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-medium border border-primary/20">UI/UX Design</span>
+<span class="px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-medium border border-primary/20">Git &amp; GitHub</span>
+<span class="px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-medium border border-primary/20">Node.js</span>
+<span class="px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-medium border border-primary/20">Data Analysis</span>
+</div>
+</section>
+<!-- CV Upload Section -->
+<section class="px-6 py-4 bg-white dark:bg-background-dark mb-6">
+<h3 class="text-base font-bold text-slate-900 dark:text-white mb-4 uppercase tracking-wider text-xs opacity-70">Documents</h3>
+<div class="border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl p-8 flex flex-col items-center justify-center text-center hover:bg-slate-50 dark:hover:bg-slate-900/30 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-slate-400 text-4xl mb-2">picture_as_pdf</span>
+<p class="text-sm font-bold text-slate-700 dark:text-slate-300">Upload your Curriculum Vitae</p>
+<p class="text-xs text-slate-500 mt-1">PDF or Word files accepted (max. 5MB)</p>
+<button class="mt-4 px-6 py-2 bg-primary/10 text-primary rounded-lg text-sm font-bold border border-primary/20">Browse Files</button>
+</div>
+</section>
+<!-- Save Profile Button -->
+<div class="px-6 pb-8">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">save</span>
+                Save Profile Changes
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 px-4 pb-6 pt-2 flex justify-between items-center z-20 shadow-2xl">
+<a class="flex flex-col items-center gap-1 flex-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 flex-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Search</span>
+</a>
+<a class="flex flex-col items-center gap-1 flex-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">work_outline</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Jobs</span>
+</a>
+<a class="flex flex-col items-center gap-1 flex-1 text-primary" href="#">
+<span class="material-symbols-outlined active-icon">person</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Profile</span>
+</a>
+</nav>
+</body></html>
